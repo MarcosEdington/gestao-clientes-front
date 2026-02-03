@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif !important;
+  background-color: #f0f2f5 !important;
+  margin: 0;
+}
+
+/* Deixa os campos de texto maiores e bonitos como no projeto anterior */
+.form-control {
+  padding: 12px !important;
+  border-radius: 8px !important;
+  border: 1px solid #ddd !important;
+}
+
+.card {
+  border: none !important;
+  border-radius: 15px !important;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05) !important;
+}
+
+.btn-primary {
+  padding: 12px 25px !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  background-color: #4f46e5 !important;
+  border: none !important;
+}
