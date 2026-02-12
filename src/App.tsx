@@ -13,14 +13,14 @@ function App() {
   return (
     <Router>
       <Routes>
-        {/* A rota raiz agora é o Login */}
+        
         <Route path="/" element={<Login />} />
         
        
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/novo-cliente" element={<NovoCliente />} />
         
-        {/* Caso o usuário digite qualquer rota inexistente, volta para o login */}
+        
         <Route path="*" element={<Navigate to="/" replace />} />
 
         <Route path="/editar-cliente/:id" element={<EditarCliente />} />
