@@ -47,7 +47,7 @@ const EditarCliente: React.FC = () => {
                 Ativo: ativo
             };
 
-            // APENAS ESTA CHAMADA. Remova qualquer outra tentativa de api.put ou api.post daqui.
+          
             await api.put(`/Cliente/${id}`, payload);
 
             // Se chegou aqui, é porque o PUT funcionou!
@@ -58,7 +58,7 @@ const EditarCliente: React.FC = () => {
                 confirmButtonColor: '#facc15'
             });
             
-            // Agora ele vai voltar para a tela inicial
+          
             navigate('/dashboard');
 
         } catch (error) {
