@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import NovoCliente from './pages/NovoCliente';
-import Login from './pages/Login'; // Importe sua nova tela de Login aqui!
+import Login from './pages/Login'; 
 import EditarCliente from './pages/EditarCliente';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
         {/* A rota raiz agora é o Login */}
         <Route path="/" element={<Login />} />
         
-        {/* Rotas protegidas (Se quiser que só entre logado) */}
+       
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/novo-cliente" element={<NovoCliente />} />
         
