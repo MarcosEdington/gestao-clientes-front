@@ -9,7 +9,7 @@ import {
     ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid 
 } from 'recharts';
 import { 
-    // Ícones que você já devia ter:
+  
     DollarSign, 
     Users, 
     Search, 
@@ -25,7 +25,7 @@ import {
     CheckCircle, 
     Info,
     
-    // Ícones que estavam faltando (os que causaram o erro):
+  
     Store, 
     LayoutDashboard, 
     UserPlus, 
@@ -36,7 +36,7 @@ import {
     Plus, 
     Printer 
 } from 'lucide-react';
-// Removi o 'X' (que estava sobrando) e adicionei 'RefreshCw' e 'TrendingDown'
+
 import { QRCodeSVG } from 'qrcode.react';
 
 
@@ -283,7 +283,7 @@ const Dashboard: React.FC = () => {
         .slice(0, 5)
         .map(c => ({ nome: c.nome.split(' ')[0], divida: c.saldoUtilizado }));
 
-            // --- ADICIONE ESTE BLOCO AQUI ---
+       
         const inicioDoMes = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 
         // 1. Quanto recebi esse mês?
@@ -301,7 +301,7 @@ const Dashboard: React.FC = () => {
                 totalPago: Math.abs(c.historico?.filter(h => h.valor < 0).reduce((sum, p) => sum + p.valor, 0) || 0)
             }))
             .sort((a, b) => b.totalPago - a.totalPago)[0];
-        // --- FIM DO BLOCO NOVO ---
+       
 
         if (loading) return <div className="vh-100 d-flex align-items-center justify-content-center bg-dark text-white">Carregando...</div>;
 
@@ -391,7 +391,7 @@ const Dashboard: React.FC = () => {
     </div>
 </div>
 
-{/* ÁREA DE FILTROS ATUALIZADA - PADRÃO PROFISSIONAL */}
+{/* ÁREA DE FILTROS ATUALIZADA  */}
 <div className="card border-0 shadow-custom rounded-4 mb-4 bg-white overflow-hidden">
     {/* Faixa Amarela no Topo */}
     <div className="bg-warning" style={{ height: '4px' }}></div>
@@ -586,7 +586,7 @@ const Dashboard: React.FC = () => {
                                 }
                             </span>
 
-                            {/* SEUS BADGES ORIGINAIS (MANTIDOS AQUI) */}
+                       
                             <span className={`badge ${c.ativo ? (c.saldoUtilizado > 0 ? 'bg-danger' : 'bg-success') : 'bg-secondary'} bg-opacity-10 ${c.ativo ? (c.saldoUtilizado > 0 ? 'text-danger' : 'text-success') : 'text-secondary'}`} style={{ fontSize: '8px', padding: '2px 4px' }}>
                                 {!c.ativo 
                                     ? 'INATIVO' 
@@ -633,7 +633,7 @@ const Dashboard: React.FC = () => {
 </div>
             </main>
 
-            {/* MODAIS (MANTENDO TODA A SUA LÓGICA ANTERIOR) */}
+       
             {clienteSelecionado && (
                 <div className="custom-overlay">
                     <div className="bg-white p-4 rounded-4 shadow-lg w-100" style={{ maxWidth: '600px' }}>
@@ -713,9 +713,7 @@ const Dashboard: React.FC = () => {
                     // String base para o Payload (sem o CRC16 final)
                     const payload = `00020126${merchantAccount.length}${merchantAccount}520400005303986${valorCodigo}5802BR59${nome.length.toString().padStart(2, '0')}${nome}60${cidade.length.toString().padStart(2, '0')}${cidade}62070503***`;
                     
-                    // Para PIX Estático sem cálculos complexos de CRC16 no front-end,
-                    // usamos uma estrutura simplificada que a maioria dos bancos aceita
-                    // ou você pode usar uma biblioteca como 'pix-payload-generator'
+                    // Para PIX Estático sem cálculos complexos de CRC16 no front-end
                     return `${payload}63041D3D`; // O sufixo 6304 indica que segue o CRC
                 })()}
                 size={160}
