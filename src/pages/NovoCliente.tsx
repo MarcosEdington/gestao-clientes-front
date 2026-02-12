@@ -24,7 +24,7 @@ const NovoCliente: React.FC = () => {
 
         setLoading(true);
         try {
-            // Enviamos agora com CPF e Telefone incluídos
+          
             await api.post('/Cliente', {
                 nome: nome,
                 cpf: cpf,
@@ -52,7 +52,7 @@ const NovoCliente: React.FC = () => {
 
     return (
         <div className="d-flex" style={{ minHeight: '100vh', background: '#F3F4F6' }}>
-            {/* SIDEBAR (Mantendo a identidade) */}
+           
             <aside className="d-flex flex-column shadow-lg" style={{ width: '280px', background: '#111827', color: '#fff', position: 'fixed', height: '100vh', zIndex: 100 }}>
                 <div className="p-4 d-flex align-items-center gap-3 border-bottom border-secondary border-opacity-20">
                     <div className="bg-warning p-2 rounded-3 text-dark"><Store size={24} /></div>
@@ -65,7 +65,7 @@ const NovoCliente: React.FC = () => {
                 </div>
             </aside>
 
-            {/* CONTEÚDO PRINCIPAL */}
+
             <main style={{ marginLeft: '280px', width: 'calc(100% - 280px)' }} className="p-5">
                 <header className="mb-5">
                     <button onClick={() => navigate('/dashboard')} className="btn btn-link text-muted p-0 d-flex align-items-center gap-2 mb-3 text-decoration-none">
@@ -97,7 +97,7 @@ const NovoCliente: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        {/* NOVO CAMPO: CPF */}
+                                
                                         <div className="col-md-6">
                                             <label className="form-label fw-bold text-dark">CPF</label>
                                             <div className="input-group">
@@ -112,7 +112,7 @@ const NovoCliente: React.FC = () => {
                                             </div>
                                         </div>
 
-                                        {/* NOVO CAMPO: TELEFONE */}
+                                      
                                         <div className="col-md-6">
                                             <label className="form-label fw-bold text-dark">Telefone / WhatsApp</label>
                                             <div className="input-group">
